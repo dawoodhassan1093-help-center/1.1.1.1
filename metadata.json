@@ -1,0 +1,6 @@
+{
+  "name": "Shadow Case: The Mystery Files",
+  "description": "Cinematic HTML5 detective mystery game with 100 unique cases, interactive crime scene inspection, suspect interrogation, detective corkboard, and forensic deduction.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
