@@ -1,15 +1,15 @@
 // Asset manifest linking real generated images and themed visual assets
 
 export const REAL_ASSETS = {
-  titleBanner: '/src/assets/images/title_banner_1793286790237.jpg',
-  crimeSceneStudy: '/src/assets/images/crime_scene_study_1793286806633.jpg',
-  crimeSceneWarehouse: '/src/assets/images/crime_scene_warehouse_1793286908668.jpg',
-  corkboardBg: '/src/assets/images/corkboard_bg_1793286925196.jpg',
-  suspectEvelyn: '/src/assets/images/suspect_evelyn_1793286820621.jpg',
-  suspectHarrington: '/src/assets/images/suspect_harrington_1793286835635.jpg',
-  suspectFinch: '/src/assets/images/suspect_finch_1793286854510.jpg',
-  evidenceWatch: '/src/assets/images/evidence_watch_1793286873156.jpg',
-  evidenceLetter: '/src/assets/images/evidence_letter_1793286889040.jpg',
+  titleBanner: '/assets/images/title_banner_1793286790237.jpg',
+  crimeSceneStudy: '/assets/images/crime_scene_study_1793286806633.jpg',
+  crimeSceneWarehouse: '/assets/images/crime_scene_warehouse_1793286908668.jpg',
+  corkboardBg: '/assets/images/corkboard_bg_1793286925196.jpg',
+  suspectEvelyn: '/assets/images/suspect_evelyn_1793286820621.jpg',
+  suspectHarrington: '/assets/images/suspect_harrington_1793286835635.jpg',
+  suspectFinch: '/assets/images/suspect_finch_1793286854510.jpg',
+  evidenceWatch: '/assets/images/evidence_watch_1793286873156.jpg',
+  evidenceLetter: '/assets/images/evidence_letter_1793286889040.jpg',
 };
 
 /**
