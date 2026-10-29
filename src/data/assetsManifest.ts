@@ -77,9 +77,9 @@ export function generateThemedPortrait(name: string, role: string, seed: number)
     <g transform="translate(70, 315)">
       <rect width="260" height="65" rx="4" fill="#0d0d10" stroke="#444" stroke-width="1.5" />
       <rect x="3" y="3" width="254" height="59" fill="#15151b" />
-      <text x="130" y="24" text-anchor="middle" fill="#d4af37" font-family="'Courier Prime', monospace" font-size="12" font-weight="bold" letter-spacing="1.5">${name.toUpperCase()}</text>
-      <text x="130" y="42" text-anchor="middle" fill="#a0a0a8" font-family="'Courier Prime', monospace" font-size="10">${role.toUpperCase()}</text>
-      <text x="130" y="55" text-anchor="middle" fill="#666" font-family="'Courier Prime', monospace" font-size="8">BOOKING FILE #${seed.toString().padStart(4, '0')}-SC</text>
+      <text x="130" y="24" text-anchor="middle" fill="#d4af37" font-family="monospace" font-size="12" font-weight="bold" letter-spacing="1.5">${name.toUpperCase()}</text>
+      <text x="130" y="42" text-anchor="middle" fill="#a0a0a8" font-family="monospace" font-size="10">${role.toUpperCase()}</text>
+      <text x="130" y="55" text-anchor="middle" fill="#666" font-family="monospace" font-size="8">BOOKING FILE #${seed.toString().padStart(4, '0')}-SC</text>
     </g>
   </svg>`;
 
@@ -148,7 +148,7 @@ export function generateThemedEvidence(title: string, category: string, seed: nu
     </g>
     <!-- Label -->
     <rect x="40" y="305" width="320" height="34" rx="2" fill="rgba(0,0,0,0.8)" stroke="#d4af37" stroke-width="1" />
-    <text x="200" y="327" text-anchor="middle" fill="#d4af37" font-family="'Courier Prime', monospace" font-size="12" font-weight="bold">${title.slice(0, 32).toUpperCase()}</text>
+    <text x="200" y="327" text-anchor="middle" fill="#d4af37" font-family="monospace" font-size="12" font-weight="bold">${title.slice(0, 32).toUpperCase()}</text>
   </svg>`;
 
   return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
@@ -215,14 +215,14 @@ export function generateThemedCrimeScene(locationName: string, category: string,
     <!-- Police Tape Banner Header -->
     <g transform="translate(0, 40) rotate(-1)">
       <rect x="-20" y="0" width="1320" height="36" fill="#eab308" opacity="0.88" />
-      <text x="640" y="24" text-anchor="middle" font-family="'Courier Prime', monospace" font-size="16" font-weight="bold" letter-spacing="4" fill="#000000">CRIME SCENE - DO NOT CROSS - CRIME SCENE - DO NOT CROSS</text>
+      <text x="640" y="24" text-anchor="middle" font-family="monospace" font-size="16" font-weight="bold" letter-spacing="4" fill="#000000">CRIME SCENE - DO NOT CROSS - CRIME SCENE - DO NOT CROSS</text>
     </g>
 
     <!-- Location Name Plate -->
     <g transform="translate(50, 640)">
       <rect width="400" height="50" rx="4" fill="rgba(10,10,14,0.9)" stroke="#d4af37" stroke-width="1.5" />
-      <text x="20" y="24" fill="#e2e8f0" font-family="'Cinzel', serif" font-size="16" font-weight="bold">${locationName.toUpperCase()}</text>
-      <text x="20" y="42" fill="#94a3b8" font-family="'Courier Prime', monospace" font-size="11">PRIMARY INVESTIGATION SECTOR</text>
+      <text x="20" y="24" fill="#e2e8f0" font-family="serif" font-size="16" font-weight="bold">${locationName.toUpperCase()}</text>
+      <text x="20" y="42" fill="#94a3b8" font-family="monospace" font-size="11">PRIMARY INVESTIGATION SECTOR</text>
     </g>
   </svg>`;
 

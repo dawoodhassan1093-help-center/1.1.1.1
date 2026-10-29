@@ -27,6 +27,7 @@ import { CaseResolutionModal } from './components/CaseResolutionModal';
 import { SettingsModal } from './components/SettingsModal';
 import { AchievementsModal } from './components/AchievementsModal';
 import { TutorialModal } from './components/TutorialModal';
+import { TermsModal } from './components/TermsModal';
 
 export default function App() {
   // Player persistence
@@ -45,6 +46,7 @@ export default function App() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isAchievementsOpen, setIsAchievementsOpen] = useState(false);
   const [isTutorialOpen, setIsTutorialOpen] = useState(false);
+  const [isTermsOpen, setIsTermsOpen] = useState(false);
 
   // Active case gameplay state
   const [timerSeconds, setTimerSeconds] = useState(0);
@@ -89,7 +91,7 @@ export default function App() {
   // Investigation timer interval
   useEffect(() => {
     let interval: ReturnType<typeof setInterval> | null = null;
-    const isModalActive = isBriefingOpen || isVerdictOpen || isResolutionOpen || isCaseSelectOpen || isSettingsOpen;
+    const isModalActive = isBriefingOpen || isVerdictOpen || isResolutionOpen || isCaseSelectOpen || isSettingsOpen || isTermsOpen;
 
     if (view === 'investigation' && !isModalActive) {
       interval = setInterval(() => {
@@ -100,7 +102,7 @@ export default function App() {
     return () => {
       if (interval) clearInterval(interval);
     };
-  }, [view, isBriefingOpen, isVerdictOpen, isResolutionOpen, isCaseSelectOpen, isSettingsOpen]);
+  }, [view, isBriefingOpen, isVerdictOpen, isResolutionOpen, isCaseSelectOpen, isSettingsOpen, isTermsOpen]);
 
   // Keyboard navigation shortcuts
   useEffect(() => {
@@ -114,6 +116,7 @@ export default function App() {
         setIsSettingsOpen(false);
         setIsAchievementsOpen(false);
         setIsTutorialOpen(false);
+        setIsTermsOpen(false);
         setActiveHintText(null);
       } else if (view === 'investigation') {
         if (e.key === '1') setActiveTab('scene');
@@ -326,6 +329,7 @@ export default function App() {
           onOpenAchievements={() => setIsAchievementsOpen(true)}
           onOpenTutorial={() => setIsTutorialOpen(true)}
           onOpenSettings={() => setIsSettingsOpen(true)}
+          onOpenTerms={() => setIsTermsOpen(true)}
           soundEnabled={progress.settings.soundEnabled}
           onToggleSound={handleToggleSound}
           completedCount={completedCount}
@@ -484,6 +488,7 @@ export default function App() {
         }
         onUnlockAllCases={handleUnlockAllCases}
         onResetProgress={handleResetProgress}
+        onOpenTerms={() => setIsTermsOpen(true)}
       />
 
       {/* Achievements Modal */}
@@ -497,6 +502,12 @@ export default function App() {
       <TutorialModal
         isOpen={isTutorialOpen}
         onClose={() => setIsTutorialOpen(false)}
+      />
+
+      {/* Terms & Conditions Modal */}
+      <TermsModal
+        isOpen={isTermsOpen}
+        onClose={() => setIsTermsOpen(false)}
       />
 
     </div>

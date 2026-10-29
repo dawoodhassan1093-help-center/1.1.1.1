@@ -10,6 +10,7 @@ interface SettingsModalProps {
   onUpdateSettings: (newSettings: PlayerProgress['settings']) => void;
   onUnlockAllCases: () => void;
   onResetProgress: () => void;
+  onOpenTerms?: () => void;
 }
 
 export const SettingsModal: React.FC<SettingsModalProps> = ({
@@ -19,6 +20,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
   onUpdateSettings,
   onUnlockAllCases,
   onResetProgress,
+  onOpenTerms,
 }) => {
   if (!isOpen) return null;
 
@@ -235,10 +237,21 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
         </div>
 
         {/* Footer */}
-        <div className="p-3 bg-[#161826] border-t border-[#232536] text-right">
+        <div className="p-3 bg-[#161826] border-t border-[#232536] flex items-center justify-between">
+          {onOpenTerms ? (
+            <button
+              onClick={() => {
+                detectiveAudio.playTypewriterClick();
+                onOpenTerms();
+              }}
+              className="text-xs font-mono text-gray-400 hover:text-[#d4af37] underline underline-offset-4 cursor-pointer"
+            >
+              Terms & Conditions
+            </button>
+          ) : <div />}
           <button
             onClick={onClose}
-            className="px-4 py-1.5 rounded bg-[#25283b] hover:bg-[#323650] text-xs font-serif text-white"
+            className="px-4 py-1.5 rounded bg-[#25283b] hover:bg-[#323650] text-xs font-serif text-white cursor-pointer"
           >
             Done
           </button>

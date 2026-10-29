@@ -1,7 +1,7 @@
 import React from 'react';
 import { REAL_ASSETS } from '../data/assetsManifest';
 import { detectiveAudio } from '../utils/audio';
-import { Play, FolderOpen, Award, BookOpen, Settings, Volume2, VolumeX, ShieldAlert } from 'lucide-react';
+import { Play, FolderOpen, Award, BookOpen, Settings, Volume2, VolumeX, ShieldAlert, Scale } from 'lucide-react';
 
 interface TitleScreenProps {
   onStartGame: () => void;
@@ -9,6 +9,7 @@ interface TitleScreenProps {
   onOpenAchievements: () => void;
   onOpenTutorial: () => void;
   onOpenSettings: () => void;
+  onOpenTerms: () => void;
   soundEnabled: boolean;
   onToggleSound: () => void;
   completedCount: number;
@@ -22,6 +23,7 @@ export const TitleScreen: React.FC<TitleScreenProps> = ({
   onOpenAchievements,
   onOpenTutorial,
   onOpenSettings,
+  onOpenTerms,
   soundEnabled,
   onToggleSound,
   completedCount,
@@ -154,9 +156,22 @@ export const TitleScreen: React.FC<TitleScreenProps> = ({
         </div>
       </main>
 
-      {/* Bottom Footer Info */}
-      <footer className="relative z-10 p-4 text-center text-xs font-mono text-gray-500">
-        SHADOW CASE: THE MYSTERY FILES • HTML5 DETECTIVE NOIR • V1.0.0
+      {/* Bottom Footer with Terms & Conditions in the Corner */}
+      <footer className="relative z-10 p-3 sm:p-4 px-4 sm:px-8 flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-gray-500 gap-2 border-t border-[#181926]/40 backdrop-blur-xs">
+        <div>SHADOW CASE: THE MYSTERY FILES • HTML5 DETECTIVE NOIR • V1.0.0</div>
+        
+        <button
+          onClick={() => {
+            detectiveAudio.playTypewriterClick();
+            onOpenTerms();
+          }}
+          className="group flex items-center gap-1.5 px-3 py-1 rounded bg-[#0f1018]/80 hover:bg-[#1c1d2b] border border-[#232538] hover:border-[#d4af37]/60 text-gray-400 hover:text-[#d4af37] transition-all cursor-pointer"
+          title="Review Official Scotland Yard Terms & Conditions"
+          aria-label="View Terms & Conditions"
+        >
+          <Scale className="w-3.5 h-3.5 text-[#d4af37] group-hover:rotate-12 transition-transform" />
+          <span className="font-serif text-xs">Terms & Conditions</span>
+        </button>
       </footer>
     </div>
   );
